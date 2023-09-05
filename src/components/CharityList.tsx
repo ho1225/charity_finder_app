@@ -18,7 +18,7 @@ function CharityList() {
   return (
       <div className='list d-flex flex-wrap'>
         {
-          data?.data.nonprofits.map((data: Nonprofit) => {
+          loaded ? data?.data.nonprofits.map((data: Nonprofit) => {
             const logoUrl = data.logoUrl ? data.logoUrl : "https://charity-finder.vitochan.com/assets/donateLogo-96b99806.svg"
             return(
               <a
@@ -50,6 +50,9 @@ function CharityList() {
               </a>
             )
           })
+          : error ? (
+            <div>Something went wrong</div>
+          ) : (<div>No Data</div>)
         }
       </div>
   )

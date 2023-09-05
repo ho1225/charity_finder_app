@@ -9,7 +9,6 @@ function CharityDetail() {
 
 
     const [showFavoriteButton, setShowFavoriteButton] = useState(true)
-    
 
     const handleOnClickTags = (tag: string) => {
         navigate(`/search/${tag}` )
@@ -24,10 +23,9 @@ function CharityDetail() {
     const handleRemoveFavorites = (data: Nonprofit) => {
         localStorage.removeItem(data.name)
         setShowFavoriteButton(true)
+        navigate(0)
         console.log("favorites removed")
     }
-
-    console.log(data)
     return (
         <div className='d-flex'>
             <div className='shadows bg-body-tertiary rounde me-5'>
