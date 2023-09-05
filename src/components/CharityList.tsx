@@ -8,7 +8,6 @@ function CharityList() {
   const navigate = useNavigate();
   
   const {data, error, loaded} = useFetch(`search/${searchTerm}`)
-  console.log(data?.data.nonprofits)
   
   const handleOnClickCharity = (data: Nonprofit) => {
     navigate(`../charity/${data.name}`, {state: data})
